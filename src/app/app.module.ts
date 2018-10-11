@@ -15,18 +15,24 @@ import {
   MatCardModule,
   MatTableModule,
   MatPaginatorModule,
-  MatSortModule
+  MatSortModule, MatGridListModule, MatMenuModule
 } from '@angular/material';
 import {FirstPageComponent} from './first-page/first-page.component';
 import {SecondPageComponent} from './second-page/second-page.component';
 import {ThirdPageComponent} from './third-page/third-page.component';
 import {TablaComponent} from './tabla/tabla.component';
+import {DashComponent} from './dash/dash.component';
+import {NavComponent} from './nav/nav.component';
+import {LoginComponent} from './login/login.component';
+import {FormsModule} from '@angular/forms';
+import {CustomMaterialModule} from './core/material.module';
 
 const appRoutes: Routes = [
   {path: 'first-page', component: FirstPageComponent},
   {path: 'second-page', component: SecondPageComponent},
   {path: 'third-page', component: ThirdPageComponent},
-  {path: 'tabla', component: TablaComponent}
+  {path: 'tabla', component: TablaComponent},
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
@@ -36,12 +42,17 @@ const appRoutes: Routes = [
     FirstPageComponent,
     SecondPageComponent,
     ThirdPageComponent,
-    TablaComponent
+    TablaComponent,
+    DashComponent,
+    NavComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
+    FormsModule,
+    CustomMaterialModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
@@ -51,7 +62,9 @@ const appRoutes: Routes = [
     MatCardModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatGridListModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
